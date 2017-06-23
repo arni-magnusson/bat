@@ -2,21 +2,22 @@
 setlocal
 if [%1]==[] goto HELP
 if [%1]==[--help] goto HELP
-REM ####################################################################################################################
-REM                                                                                                                    #
-REM Script:   2jpg [-dpi=n] [-quality=n] file                                                                          #
-REM                                                                                                                    #
-REM Purpose:  Convert bitmap or EPS file to JPG format                                                                 #
-REM                                                                                                                    #
-REM Args:     dpi is output resolution when converting EPS file (72=low[default], 600=high)                            #
-REM           quality is JPG compression quality, 0-100 (default is 75)                                                #
-REM           file is file to convert                                                                                  #
-REM                                                                                                                    #
-REM Requires: convert, gswin32c                                                                                        #
-REM                                                                                                                    #
-REM Returns:  Creates JPG file with same prefix in current directory                                                   #
-REM                                                                                                                    #
-REM ####################################################################################################################
+REM ############################################################################
+REM                                                                            #
+REM Script:   2jpg [-dpi=n] [-quality=n] file                                  #
+REM                                                                            #
+REM Purpose:  Convert bitmap or EPS file to JPG format                         #
+REM                                                                            #
+REM Args:     dpi is output resolution when converting EPS file                #
+REM             (72=low[default], 600=high)                                    #
+REM           quality is JPG compression quality, 0-100 (default is 75)        #
+REM           file is file to convert                                          #
+REM                                                                            #
+REM Requires: convert, gswin32c                                                #
+REM                                                                            #
+REM Returns:  Creates JPG file with same prefix in current directory           #
+REM                                                                            #
+REM ############################################################################
 
 rem Pop args until file=%1
 set gsargs=
@@ -24,8 +25,10 @@ set imargs=
 set pnmargs=
 :STARTLOOP
 if [%2]==[] goto ENDLOOP
-if %1==-dpi set gsargs=%gsargs% -r%2&                                                              shift & shift
-if %1==-quality set gsargs=%gsargs% -dJPEGQ=%2 & set imargs=-quality %2 & set pnmargs=-quality %2& shift & shift
+if %1==-dpi set gsargs=%gsargs% -r%2&^
+ shift & shift
+if %1==-quality set gsargs=%gsargs% -dJPEGQ=%2 & set imargs=-quality %2 &^
+ set pnmargs=-quality %2& shift & shift
 goto STARTLOOP
 :ENDLOOP
 

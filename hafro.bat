@@ -1,20 +1,20 @@
 @echo off
 setlocal
 if [%1]==[--help] goto HELP
-REM ####################################################################################################################
-REM                                                                                                                    #
-REM Script:   hafro [-all] [-off] [-on] [-viktor]                                                                      #
-REM                                                                                                                    #
-REM Purpose:  Connect/disconnect Hafro network drives                                                                  #
-REM                                                                                                                    #
-REM Args:     all means connect '%USERNAME%', 'haf', 'reikn', 'pakkar', 'u2'                                           #
-REM           off means disconnect                                                                                     #
-REM           on (default) means connect '%USERNAME%', 'haf', and 'reikn'                                              #
-REM           viktor means connect 'install', 'kerfi', 'media', and 'temp'                                             #
-REM                                                                                                                    #
-REM Returns:  Adds or removes Windows drive letters                                                                    #
-REM                                                                                                                    #
-REM ####################################################################################################################
+REM ############################################################################
+REM                                                                            #
+REM Script:   hafro [-all] [-off] [-on] [-viktor]                              #
+REM                                                                            #
+REM Purpose:  Connect/disconnect Hafro network drives                          #
+REM                                                                            #
+REM Args:     all means connect '%USERNAME%', 'haf', 'reikn', 'pakkar', 'u2'   #
+REM           off means disconnect                                             #
+REM           on (default) means connect '%USERNAME%', 'haf', and 'reikn'      #
+REM           viktor means connect 'install', 'kerfi', 'media', and 'temp'     #
+REM                                                                            #
+REM Returns:  Adds or removes Windows drive letters                            #
+REM                                                                            #
+REM ############################################################################
 
 rem Pop args until file=%1
 set action=on

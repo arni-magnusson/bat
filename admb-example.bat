@@ -2,19 +2,19 @@
 setlocal
 if [%1]==[] goto HELP
 if [%1]==[--help] goto HELP
-REM ####################################################################################################################
-REM                                                                                                                    #
-REM Script:   admb-example example                                                                                     #
-REM                                                                                                                    #
-REM Purpose:  Copy ADMB example directory                                                                              #
-REM                                                                                                                    #
-REM Args:     example is a keyword like 'simple'                                                                       #
-REM                                                                                                                    #
-REM Requires: e:/tolvur/admb/examples/fournier                                                                         #
-REM                                                                                                                    #
-REM Returns:  Example directory is created                                                                             #
-REM                                                                                                                    #
-REM ####################################################################################################################
+REM ############################################################################
+REM                                                                            #
+REM Script:   admb-example example                                             #
+REM                                                                            #
+REM Purpose:  Copy ADMB example directory                                      #
+REM                                                                            #
+REM Args:     example is a keyword like 'simple'                               #
+REM                                                                            #
+REM Requires: e:/tolvur/admb/examples/fournier                                 #
+REM                                                                            #
+REM Returns:  Example directory is created                                     #
+REM                                                                            #
+REM ############################################################################
 
 set fournier=e:\tolvur\admb\examples\fournier
 goto %1

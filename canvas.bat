@@ -2,21 +2,22 @@
 setlocal
 if [%1]==[] goto HELP
 if [%1]==[--help] goto HELP
-REM ####################################################################################################################
-REM                                                                                                                    #
-REM Script:   canvas -extent=WxH [-gravity=Center] file                                                                #
-REM                                                                                                                    #
-REM Purpose:  Enlarge image canvas                                                                                     #
-REM                                                                                                                    #
-REM Args:     extent is width and height in WxH format                                                                 #
-REM           gravity is where to place original image (default is Center, alternatives include NorthWest)             #
-REM           file is the image filename                                                                               #
-REM                                                                                                                    #
-REM Requires: convert                                                                                                  #
-REM                                                                                                                    #
-REM Returns:  Creates new image file with WxH appended to name                                                         #
-REM                                                                                                                    #
-REM ####################################################################################################################
+REM ############################################################################
+REM                                                                            #
+REM Script:   canvas -extent=WxH [-gravity=Center] file                        #
+REM                                                                            #
+REM Purpose:  Enlarge image canvas                                             #
+REM                                                                            #
+REM Args:     extent is width and height in WxH format                         #
+REM           gravity is where to place original image (default is Center,     #
+REM             alternatives include NorthWest)                                #
+REM           file is the image filename                                       #
+REM                                                                            #
+REM Requires: convert                                                          #
+REM                                                                            #
+REM Returns:  Creates new image file with WxH appended to name                 #
+REM                                                                            #
+REM ############################################################################
 
 rem Pop args until file=%1
 set extent=NA

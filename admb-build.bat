@@ -1,14 +1,14 @@
 @echo off
 rem setglobal
-REM ####################################################################################################################
-REM                                                                                                                    #
-REM Script:   admb-build                                                                                               #
-REM                                                                                                                    #
-REM Purpose:  Disable RTOOLS and MSYS in path, e.g. before building ADMB                                               #
-REM                                                                                                                    #
-REM Returns:  Path is changed                                                                                          #
-REM                                                                                                                    #
-REM ####################################################################################################################
+REM ############################################################################
+REM                                                                            #
+REM Script:   admb-build                                                       #
+REM                                                                            #
+REM Purpose:  Disable RTOOLS and MSYS in path, e.g. before building ADMB       #
+REM                                                                            #
+REM Returns:  Path is changed                                                  #
+REM                                                                            #
+REM ############################################################################
 
 REM 1  Store desired path in a file
 set newpath=%temp%\newpath.txt

@@ -1,20 +1,22 @@
 @echo off
 setlocal
-REM ####################################################################################################################
-REM                                                                                                                    #
-REM Script:  fizz3                                                                                                     #
-REM                                                                                                                    #
-REM Purpose: Solution to FizzBuzz test, using an inner block                                                           #
-REM                                                                                                                    #
-REM Notes:    The task is to print the numbers from 1 to 100, with the following exceptions:                           #
-REM           - for multiples of three print "Fizz" instead of the number                                              #
-REM           - for multiples of five print "Buzz"                                                                     #
-REM           - for numbers which are multiples of both three and five print "FizzBuzz"                                #
-REM           Code is 257 bytes                                                                                        #
-REM                                                                                                                    #
-REM Returns:  Numbers, Fizz, Buzz, and FizzBuzz                                                                        #
-REM                                                                                                                    #
-REM ####################################################################################################################
+REM ############################################################################
+REM                                                                            #
+REM Script:  fizz3                                                             #
+REM                                                                            #
+REM Purpose: Solution to FizzBuzz test, using an inner block                   #
+REM                                                                            #
+REM Notes:    The task is to print the numbers from 1 to 100, with the         #
+REM             following exceptions:                                          #
+REM             - for multiples of three print "Fizz" instead of the number    #
+REM             - for multiples of five print "Buzz"                           #
+REM             - for numbers which are multiples of both three and five print #
+REm               "FizzBuzz"                                                   #
+REM           Code is 257 bytes                                                #
+REM                                                                            #
+REM Returns:  Numbers, Fizz, Buzz, and FizzBuzz                                #
+REM                                                                            #
+REM ############################################################################
 
 for /L %%i in (1,1,100) do call :INNER %%i
 

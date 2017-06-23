@@ -2,20 +2,20 @@
 setlocal
 if [%1]==[] goto HELP
 if [%1]==[--help] goto HELP
-REM ####################################################################################################################
-REM                                                                                                                    #
-REM Script:   2ico [-colors=n] file                                                                                    #
-REM                                                                                                                    #
-REM Purpose:  Convert bitmap file to ICO format                                                                        #
-REM                                                                                                                    #
-REM Args:     colors is the required number of colours (2, 16, 256)                                                    #
-REM           file is file to convert                                                                                  #
-REM                                                                                                                    #
-REM Requires: png2ico, convert                                                                                         #
-REM                                                                                                                    #
-REM Returns:  Creates ICO file with same prefix in current directory                                                   #
-REM                                                                                                                    #
-REM ####################################################################################################################
+REM ############################################################################
+REM                                                                            #
+REM Script:   2ico [-colors=n] file                                            #
+REM                                                                            #
+REM Purpose:  Convert bitmap file to ICO format                                #
+REM                                                                            #
+REM Args:     colors is the required number of colours (2, 16, 256)            #
+REM           file is file to convert                                          #
+REM                                                                            #
+REM Requires: png2ico, convert                                                 #
+REM                                                                            #
+REM Returns:  Creates ICO file with same prefix in current directory           #
+REM                                                                            #
+REM ############################################################################
 
 rem Pop args until file=%1
 set icoargs=

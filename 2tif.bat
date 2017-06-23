@@ -2,24 +2,28 @@
 setlocal
 if [%1]==[] goto HELP
 if [%1]==[--help] goto HELP
-REM ####################################################################################################################
-REM                                                                                                                    #
-REM Script:   2tif [-ag=n] [-at=n] [-dpi=n] file                                                                       #
-REM                                                                                                                    #
-REM Purpose:  Convert bitmap, EPS, or PDF file to TIF format                                                           #
-REM                                                                                                                    #
-REM Args:     ag is anti-aliasing for graphics when converting EPS file (1=none[default], 4=full)                      #
-REM           at is anti-aliasing for text when converting EPS file (1=none[default], 4=full)                          #
-REM           dpi is output resolution when converting EPS file (72=low[default], 600=high)                            #
-REM           file is file to convert                                                                                  #
-REM                                                                                                                    #
-REM Notes:    EPS/PDF/PS -> TIF results in full tiff24nc palette, but bitmap -> TIF may result in smaller palette      #
-REM                                                                                                                    #
-REM Requires: convert, gswin32c                                                                                        #
-REM                                                                                                                    #
-REM Returns:  Creates TIF file with same prefix in current directory                                                   #
-REM                                                                                                                    #
-REM ####################################################################################################################
+REM ############################################################################
+REM                                                                            #
+REM Script:   2tif [-ag=n] [-at=n] [-dpi=n] file                               #
+REM                                                                            #
+REM Purpose:  Convert bitmap, EPS, or PDF file to TIF format                   #
+REM                                                                            #
+REM Args:     ag is anti-aliasing for graphics when converting EPS file        #
+REM             (1=none[default], 4=full)                                      #
+REM           at is anti-aliasing for text when converting EPS file            #
+REM             (1=none[default], 4=full)                                      #
+REM           dpi is output resolution when converting EPS file                #
+REM             (72=low[default], 600=high)                                    #
+REM           file is file to convert                                          #
+REM                                                                            #
+REM Notes:    EPS/PDF/PS -> TIF results in full tiff24nc palette, but          #
+REM             bitmap -> TIF may result in smaller palette                    #
+REM                                                                            #
+REM Requires: convert, gswin32c                                                #
+REM                                                                            #
+REM Returns:  Creates TIF file with same prefix in current directory           #
+REM                                                                            #
+REM ############################################################################
 
 rem Pop args until file=%1
 set gsargs=
@@ -48,7 +52,7 @@ goto %~x1
 :.EPS
 :.PDF
 :.PS
-echo Consider using 2png and then convert PNG-^>TIF, for fine control and small file
+echo Consider using 2png, then convert PNG-^>TIF for fine control and small file
 echo.
 gswin32c %gsargs% %tif% %1  & goto EOF
 

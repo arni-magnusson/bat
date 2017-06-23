@@ -2,22 +2,23 @@
 setlocal
 if [%1]==[] goto HELP
 if [%1]==[--help] goto HELP
-REM ####################################################################################################################
-REM                                                                                                                    #
-REM Script:   zipme [-b] [-g] [-x] file                                                                                #
-REM                                                                                                                    #
-REM Purpose:  Zip file or directory to 7Z, BZ2, GZ, TAR.BZ2, TAR.GZ, XZ, or ZIP (default) format                       #
-REM                                                                                                                    #
-REM Args:     b creates BZ2 or TAR.BZ2 file                                                                            #
-REM           g creates GZ or TAR.GZ file                                                                              #
-REM           x creates XZ or TAR.XZ file                                                                              #
-REM           file is file or directory to zip                                                                         #
-REM                                                                                                                    #
-REM Requires: bzip2, gzip, tar, xz, zip                                                                                #
-REM                                                                                                                    #
-REM Returns:  Creates zipped file with same prefix in current directory                                                #
-REM                                                                                                                    #
-REM ####################################################################################################################
+REM ############################################################################
+REM                                                                            #
+REM Script:   zipme [-b] [-g] [-x] file                                        #
+REM                                                                            #
+REM Purpose:  Zip file or directory to 7Z, BZ2, GZ, TAR.BZ2, TAR.GZ, XZ, or    #
+REM             ZIP (default) format                                           #
+REM                                                                            #
+REM Args:     b creates BZ2 or TAR.BZ2 file                                    #
+REM           g creates GZ or TAR.GZ file                                      #
+REM           x creates XZ or TAR.XZ file                                      #
+REM           file is file or directory to zip                                 #
+REM                                                                            #
+REM Requires: bzip2, gzip, tar, xz, zip                                        #
+REM                                                                            #
+REM Returns:  Creates zipped file with same prefix in current directory        #
+REM                                                                            #
+REM ############################################################################
 
 rem Pop args until file=%1
 set method=zip

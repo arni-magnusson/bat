@@ -2,20 +2,20 @@
 setlocal
 if [%1]==[] goto HELP
 if [%1]==[--help] goto HELP
-REM ####################################################################################################################
-REM                                                                                                                    #
-REM Script:   2wav [-mono] file                                                                                        #
-REM                                                                                                                    #
-REM Purpose:  Convert MP3 file to WAV format                                                                           #
-REM                                                                                                                    #
-REM Args:     mono forces single-channel (wav->wav)                                                                    #
-REM           file is file to convert                                                                                  #
-REM                                                                                                                    #
-REM Requires: lame, mplayer                                                                                            #
-REM                                                                                                                    #
-REM Returns:  Creates WAV file with same prefix in current directory                                                   #
-REM                                                                                                                    #
-REM ####################################################################################################################
+REM ############################################################################
+REM                                                                            #
+REM Script:   2wav [-mono] file                                                #
+REM                                                                            #
+REM Purpose:  Convert MP3 file to WAV format                                   #
+REM                                                                            #
+REM Args:     mono forces single-channel (wav->wav)                            #
+REM           file is file to convert                                          #
+REM                                                                            #
+REM Requires: lame, mplayer                                                    #
+REM                                                                            #
+REM Returns:  Creates WAV file with same prefix in current directory           #
+REM                                                                            #
+REM ############################################################################
 
 rem Pop args until file=%1
 set mplayerargs=

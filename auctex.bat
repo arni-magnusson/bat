@@ -2,27 +2,29 @@
 setlocal
 if [%1]==[] goto HELP
 if [%1]==[--help] goto HELP
-REM ####################################################################################################################
-REM                                                                                                                    #
-REM Script:   auctex [-c] [-k] [-s] [-t] [-v] [-p paper] file                                                          #
-REM                                                                                                                    #
-REM Purpose:  Compile or view LaTeX document from Emacs                                                                #
-REM                                                                                                                    #
-REM Args:     c converts document to PDF format the long way: tex->dvi->ps->pdf                                        #
-REM           k knits Rnw to PDF                                                                                       #
-REM           s sweaves Rnw to PDF                                                                                     #
-REM           t tangles Rnw to R                                                                                       #
-REM           v invokes PDF viewer                                                                                     #
-REM           paper is the paper size, a4 (default) or letter                                                          #
-REM           file is the TeX file in current Emacs buffer                                                             #
-REM                                                                                                                    #
-REM Requires: texify, dvips, gswin32c, sumatra, gsview32, R                                                            #
-REM                                                                                                                    #
-REM Example:  C-c C-c, C-c C-d, C-c C-v, C-c C-d                                                                       #
-REM                                                                                                                    #
-REM Returns:  Creates PDF file with same prefix in current directory if -c or -s, otherwise null                       #
-REM                                                                                                                    #
-REM ####################################################################################################################
+REM ############################################################################
+REM                                                                            #
+REM Script:   auctex [-c] [-k] [-s] [-t] [-v] [-p paper] file                  #
+REM                                                                            #
+REM Purpose:  Compile or view LaTeX document from Emacs                        #
+REM                                                                            #
+REM Args:     c converts document to PDF format the long way:                  #
+REM             tex->dvi->ps->pdf                                              #
+REM           k knits Rnw to PDF                                               #
+REM           s sweaves Rnw to PDF                                             #
+REM           t tangles Rnw to R                                               #
+REM           v invokes PDF viewer                                             #
+REM           paper is the paper size, a4 (default) or letter                  #
+REM           file is the TeX file in current Emacs buffer                     #
+REM                                                                            #
+REM Requires: texify, dvips, gswin32c, sumatra, gsview32, R                    #
+REM                                                                            #
+REM Example:  C-c C-c, C-c C-d, C-c C-v, C-c C-d                               #
+REM                                                                            #
+REM Returns:  Creates PDF file with same prefix in current directory if -c or  #
+REM             -s, otherwise null                                             #
+REM                                                                            #
+REM ############################################################################
 
 rem Pop args until file=%1
 set action=help
@@ -40,7 +42,8 @@ goto STARTLOOP
 :ENDLOOP
 
 set dviargs=%dviargs% -P pdf
-set gsargs=%gsargs% -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -dCompatibilityLevel=1.4 -dSAFER -q -o
+set gsargs=%gsargs% -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress^
+ -dCompatibilityLevel=1.4 -dSAFER -q -o
 set tex="%~dpn1.tex"
 set dvi="%~dpn1.dvi"
 set ps="%~dpn1.ps"

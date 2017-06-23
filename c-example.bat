@@ -1,19 +1,19 @@
 @echo off
 setlocal
 if [%1]==[--help] goto HELP
-REM ####################################################################################################################
-REM                                                                                                                    #
-REM Script:   c-example example                                                                                        #
-REM                                                                                                                    #
-REM Purpose:  Copy C/C++ example directory                                                                             #
-REM                                                                                                                    #
-REM Args:     example is a keyword like 'hello'                                                                        #
-REM                                                                                                                    #
-REM Requires: e:/tolvur/program/c/examples                                                                             #
-REM                                                                                                                    #
-REM Returns:  Example directory is created                                                                             #
-REM                                                                                                                    #
-REM ####################################################################################################################
+REM ############################################################################
+REM                                                                            #
+REM Script:   c-example example                                                #
+REM                                                                            #
+REM Purpose:  Copy C/C++ example directory                                     #
+REM                                                                            #
+REM Args:     example is a keyword like 'hello'                                #
+REM                                                                            #
+REM Requires: e:/tolvur/program/c/examples                                     #
+REM                                                                            #
+REM Returns:  Example directory is created                                     #
+REM                                                                            #
+REM ############################################################################
 
 set base=e:\tolvur\program\c\examples
 goto %1

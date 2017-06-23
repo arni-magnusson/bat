@@ -2,23 +2,25 @@
 setlocal
 if [%1]==[] goto HELP
 if [%1]==[--help] goto HELP
-REM ####################################################################################################################
-REM                                                                                                                    #
-REM Script:   2eps [-dpi=n] file                                                                                       #
-REM                                                                                                                    #
-REM Purpose:  Convert bitmap, PS, or PDF file to EPS format                                                            #
-REM                                                                                                                    #
-REM Args:     dpi is output resolution when converting PS file                                                         #
-REM           file is PS file to convert                                                                               #
-REM                                                                                                                    #
-REM Notes:    PS->EPS gives bitmap output, consider using PS->PDF->EPS for vector output                               #
-REM           PDF->EPS (pdftops) is postprocessed, replacing "% Produced" with "%%Produced"                            #
-REM                                                                                                                    #
-REM Requires: bmeps, convert, gswin32c, pdftops, sed                                                                   #
-REM                                                                                                                    #
-REM Returns:  Creates EPS file with same prefix in current directory                                                   #
-REM                                                                                                                    #
-REM ####################################################################################################################
+REM ############################################################################
+REM                                                                            #
+REM Script:   2eps [-dpi=n] file                                               #
+REM                                                                            #
+REM Purpose:  Convert bitmap, PS, or PDF file to EPS format                    #
+REM                                                                            #
+REM Args:     dpi is output resolution when converting PS file                 #
+REM           file is PS file to convert                                       #
+REM                                                                            #
+REM Notes:    PS->EPS gives bitmap output, consider using PS->PDF->EPS for     #
+REM             vector output                                                  #
+REM           PDF->EPS (pdftops) is postprocessed, replacing "% Produced" with #
+REM             "%%Produced"                                                   #
+REM                                                                            #
+REM Requires: bmeps, convert, gswin32c, pdftops, sed                           #
+REM                                                                            #
+REM Returns:  Creates EPS file with same prefix in current directory           #
+REM                                                                            #
+REM ############################################################################
 
 rem Pop args until file=%1
 set gsargs=

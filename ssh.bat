@@ -2,24 +2,24 @@
 setlocal
 if [%1]==[] goto HELP
 if [%1]==[--help] goto HELP
-REM ####################################################################################################################
-REM                                                                                                                    #
-REM Batch:    ssh [-load "Konsole"] [user@]host                                                                        #
-REM                                                                                                                    #
-REM Purpose:  Log on to remote machine                                                                                 #
-REM                                                                                                                    #
-REM Args:     load is a saved session theme                                                                            #
-REM           host is the machine to login on                                                                          #
-REM                                                                                                                    #
-REM Notes:    Similar syntax to Linux, except [-c command] is not supported                                            #
-REM           X11 forwarding is enabled                                                                                #
-REM           Loads the "Konsole" session theme by default                                                             #
-REM                                                                                                                    #
-REM Requires: putty                                                                                                    #
-REM                                                                                                                    #
-REM Returns:  Remote terminal is started                                                                               #
-REM                                                                                                                    #
-REM ####################################################################################################################
+REM ############################################################################
+REM                                                                            #
+REM Batch:    ssh [-load "Konsole"] [user@]host                                #
+REM                                                                            #
+REM Purpose:  Log on to remote machine                                         #
+REM                                                                            #
+REM Args:     load is a saved session theme                                    #
+REM           host is the machine to login on                                  #
+REM                                                                            #
+REM Notes:    Similar syntax to Linux, except [-c command] is not supported    #
+REM           X11 forwarding is enabled                                        #
+REM           Loads the "Konsole" session theme by default                     #
+REM                                                                            #
+REM Requires: putty                                                            #
+REM                                                                            #
+REM Returns:  Remote terminal is started                                       #
+REM                                                                            #
+REM ############################################################################
 
 rem Pop args until [user@]host is %1
 set session="Konsole"

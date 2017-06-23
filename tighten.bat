@@ -2,25 +2,26 @@
 setlocal
 if [%1]==[] goto HELP
 if [%1]==[--help] goto HELP
-REM ####################################################################################################################
-REM                                                                                                                    #
-REM Batch:    tighten [-h] [-m=3] [-x] file                                                                            #
-REM                                                                                                                    #
-REM Purpose:  Tighten bounding box of EPS file                                                                         #
-REM                                                                                                                    #
-REM Args:     h changes HiResBoundingBox instead of BoundingBox                                                        #
-REM           m is the margin, points between ink and edge of page                                                     #
-REM           x removes HiResBoundingBox, or BoundingBox if -h                                                         #
-REM           file is EPS file to tighten                                                                              #
-REM                                                                                                                    #
-REM Notes:    Similar to epstool -b --copy --quiet "%1" out.eps, but with margins                                      #
-REM           Writes backup tighten.eps in %temp%                                                                      #
-REM                                                                                                                    #
-REM Requires: gswin32c, gawk, sed                                                                                      #
-REM                                                                                                                    #
-REM Returns:  Overwrites EPS file with updated bounding box                                                            #
-REM                                                                                                                    #
-REM ####################################################################################################################
+REM ############################################################################
+REM                                                                            #
+REM Batch:    tighten [-h] [-m=3] [-x] file                                    #
+REM                                                                            #
+REM Purpose:  Tighten bounding box of EPS file                                 #
+REM                                                                            #
+REM Args:     h changes HiResBoundingBox instead of BoundingBox                #
+REM           m is the margin, points between ink and edge of page             #
+REM           x removes HiResBoundingBox, or BoundingBox if -h                 #
+REM           file is EPS file to tighten                                      #
+REM                                                                            #
+REM Notes:    Similar to epstool -b --copy --quiet "%1" out.eps, but with      #
+REM             margins                                                        #
+REM           Writes backup tighten.eps in %temp%                              #
+REM                                                                            #
+REM Requires: gswin32c, gawk, sed                                              #
+REM                                                                            #
+REM Returns:  Overwrites EPS file with updated bounding box                    #
+REM                                                                            #
+REM ############################################################################
 
 rem Pop args until file=%1
 set h=0
@@ -43,7 +44,8 @@ rem 1  Calculate narrow box
 gswin32c -dBATCH -dEPSCrop -dNOPAUSE -sDEVICE=bbox %1 > nul 2> %file1%
 
 rem 2  Add margins
-gawk '/%bb%/ {print "%bb%: " $2-%m% " " $3-%m% " " $4+%m% " " $5+%m%}' %file1% > %file2%
+gawk '/%bb%/ {print "%bb%: " $2-%m% " " $3-%m% " " $4+%m% " " $5+%m%}' %file1%^
+ > %file2%
 for /F "usebackq tokens=*" %%L in (%file2%) do set box=%%L
 
 rem 3  Backup and overwrite file

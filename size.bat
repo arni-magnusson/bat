@@ -1,25 +1,27 @@
 @echo off
 setlocal
 if [%1]==[--help] goto HELP
-REM ####################################################################################################################
-REM                                                                                                                    #
-REM Script:   size [-b] [-d=maxdepth] [-k] [-m] dir                                                                    #
-REM                                                                                                                    #
-REM Purpose:  Show directory size                                                                                      #
-REM                                                                                                                    #
-REM Args:     b shows size in bytes (default is human-readable)                                                        #
-REM           maxdepth is how many levels of subdirectories should be recursed into (default is 0)                     #
-REM           k shows size in kilobytes (default is human-readable)                                                    #
-REM           m shows size in megabytes (default is human-readable)                                                    #
-REM           dir is a directory whose size should be shown                                                            #
-REM                                                                                                                    #
-REM Notes:    All values are rounded up                                                                                #
-REM                                                                                                                    #
-REM Returns:  Directory size is shown on screen                                                                        #
-REM                                                                                                                    #
-REM ####################################################################################################################
+REM ############################################################################
+REM                                                                            #
+REM Script:   size [-b] [-d=maxdepth] [-k] [-m] dir                            #
+REM                                                                            #
+REM Purpose:  Show directory size                                              #
+REM                                                                            #
+REM Args:     b shows size in bytes (default is human-readable)                #
+REM           maxdepth is how many levels of subdirectories should be recursed #
+REM             into (default is 0)                                            #
+REM           k shows size in kilobytes (default is human-readable)            #
+REM           m shows size in megabytes (default is human-readable)            #
+REM           dir is a directory whose size should be shown                    #
+REM                                                                            #
+REM Notes:    All values are rounded up                                        #
+REM                                                                            #
+REM Returns:  Directory size is shown on screen                                #
+REM                                                                            #
+REM ############################################################################
 
-rem Pop all args starting with hyphen, until either (1) no args remain or (2) %1 is the 'dir' arg
+rem Pop all args starting with hyphen, until either
+rem (1) no args remain or (2) %1 is the 'dir' arg
 set units=-bh
 :STARTLOOP
 if [%1]==[] goto ENDLOOP

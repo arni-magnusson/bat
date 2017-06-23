@@ -1,1 +1,1 @@
-@call f:/home/bat/admb-ide-112.bat
+@call admb-ide-112.bat

@@ -2,21 +2,21 @@
 setlocal
 if [%1]==[] goto HELP
 if [%1]==[--help] goto HELP
-REM ####################################################################################################################
-REM                                                                                                                    #
-REM Script:   pdfclean file                                                                                            #
-REM                                                                                                                    #
-REM Purpose:  Replace PDF stamp like '(Downloaded by ...)' with spaces                                                 #
-REM                                                                                                                    #
-REM Args:     file is a PDF document                                                                                   #
-REM                                                                                                                    #
-REM Notes:    Writes backup pdfclean.pdf in %temp%                                                                     #
-REM                                                                                                                    #
-REM Requires: qpdf, Emacs with Lisp function `pdf-clean' in .emacs                                                     #
-REM                                                                                                                    #
-REM Returns:  Overwrites original PDF file, after removing stamps                                                      #
-REM                                                                                                                    #
-REM ####################################################################################################################
+REM ############################################################################
+REM                                                                            #
+REM Script:   pdfclean file                                                    #
+REM                                                                            #
+REM Purpose:  Replace PDF stamp like '(Downloaded by ...)' with spaces         #
+REM                                                                            #
+REM Args:     file is a PDF document                                           #
+REM                                                                            #
+REM Notes:    Writes backup pdfclean.pdf in %temp%                             #
+REM                                                                            #
+REM Requires: qpdf, Emacs with Lisp function `pdf-clean' in .emacs             #
+REM                                                                            #
+REM Returns:  Overwrites original PDF file, after removing stamps              #
+REM                                                                            #
+REM ############################################################################
 
 set backup=%temp%\pdfclean.pdf
 set clean="%~dpn1_clean.pdf"

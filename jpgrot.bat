@@ -2,23 +2,23 @@
 setlocal
 if [%1]==[] goto HELP
 if [%1]==[--help] goto HELP
-REM ####################################################################################################################
-REM                                                                                                                    #
-REM Script:   jpgrot [-d deg] [-l] [-r] file                                                                           #
-REM                                                                                                                    #
-REM Purpose:  Rotate jpeg file                                                                                         #
-REM                                                                                                                    #
-REM Args:     deg is the number of degrees to rotate                                                                   #
-REM           l rotates left, 270 degrees                                                                              #
-REM           r rotates right, 90 degrees                                                                              #
-REM                                                                                                                    #
-REM Notes:    Writes backup rot.jpg in %temp%                                                                          #
-REM                                                                                                                    #
-REM Requires: jpegtran, touch                                                                                          #
-REM                                                                                                                    #
-REM Returns:  Rotates and overwrites jpeg file                                                                         #
-REM                                                                                                                    #
-REM ####################################################################################################################
+REM ############################################################################
+REM                                                                            #
+REM Script:   jpgrot [-d deg] [-l] [-r] file                                   #
+REM                                                                            #
+REM Purpose:  Rotate jpeg file                                                 #
+REM                                                                            #
+REM Args:     deg is the number of degrees to rotate                           #
+REM           l rotates left, 270 degrees                                      #
+REM           r rotates right, 90 degrees                                      #
+REM                                                                            #
+REM Notes:    Writes backup rot.jpg in %temp%                                  #
+REM                                                                            #
+REM Requires: jpegtran, touch                                                  #
+REM                                                                            #
+REM Returns:  Rotates and overwrites jpeg file                                 #
+REM                                                                            #
+REM ############################################################################
 
 rem Pop args until file=%1
 set deg=0

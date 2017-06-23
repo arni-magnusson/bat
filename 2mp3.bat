@@ -2,21 +2,21 @@
 setlocal
 if [%1]==[] goto HELP
 if [%1]==[--help] goto HELP
-REM ####################################################################################################################
-REM                                                                                                                    #
-REM Script:   2mp3 [-b=n] [-V=0] file                                                                                  #
-REM                                                                                                                    #
-REM Purpose:  Convert WAV or WMA file to MP3 format                                                                    #
-REM                                                                                                                    #
-REM Args:     b is constant bitrate                                                                                    #
-REM           V is variable bitrate (default 0)                                                                        #
-REM           file is file to convert                                                                                  #
-REM                                                                                                                    #
-REM Requires: lame, mplayer                                                                                            #
-REM                                                                                                                    #
-REM Returns:  Creates MP3 file with same prefix in current directory                                                   #
-REM                                                                                                                    #
-REM ####################################################################################################################
+REM ############################################################################
+REM                                                                            #
+REM Script:   2mp3 [-b=n] [-V=0] file                                          #
+REM                                                                            #
+REM Purpose:  Convert WAV or WMA file to MP3 format                            #
+REM                                                                            #
+REM Args:     b is constant bitrate                                            #
+REM           V is variable bitrate (default 0)                                #
+REM           file is file to convert                                          #
+REM                                                                            #
+REM Requires: lame, mplayer                                                    #
+REM                                                                            #
+REM Returns:  Creates MP3 file with same prefix in current directory           #
+REM                                                                            #
+REM ############################################################################
 
 rem Pop args until file=%1
 set lameargs=-V 0
