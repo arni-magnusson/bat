@@ -21,8 +21,7 @@ if [%arg%]==[] (set n=1) else (set n=%arg:-=%)
 if %n% GTR 52 set n=52
 set /a last=-1+2*%n%
 
-lynx -source http://desktoppub.about.com/library/weekly/lorem.txt |^
- sed -n "1,%last%p"
+lynx -source http://desktoppub.about.com/library/weekly/lorem.txt | sed -n "1,%last%p"
 
 goto EOF
 

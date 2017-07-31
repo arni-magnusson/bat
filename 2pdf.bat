@@ -35,18 +35,16 @@ set gsargs=
 set quality=prepress
 :STARTLOOP
 if [%2]==[] goto ENDLOOP
-if %1==-flate set gsargs=%gsargs%^
- -dAutoFilterColorImages=false -dColorImageFilter=/FlateEncode& shift
-if %1==-gray set bmargs=-g&                                     shift
-if %1==-paper set dviargs=-p %2 & set gsargs=-sPAPERSIZE=%2&    shift & shift
-if %1==-quality set quality=%2&                                 shift & shift
+if %1==-flate set gsargs=%gsargs% -dAutoFilterColorImages=false -dColorImageFilter=/FlateEncode& shift
+if %1==-gray set bmargs=-g&                                  shift
+if %1==-paper set dviargs=-p %2 & set gsargs=-sPAPERSIZE=%2& shift & shift
+if %1==-quality set quality=%2&                              shift & shift
 goto STARTLOOP
 :ENDLOOP
 
 set bmargs=%bmargs% -p 3 --quiet
 set convert=%gnu%/graphics/imagick/convert
-set gsargs=%gsargs% -sDEVICE=pdfwrite -dEPSCrop -dPDFSETTINGS=/%quality%^
- -dCompatibilityLevel=1.4 -dSAFER -q -o
+set gsargs=%gsargs% -sDEVICE=pdfwrite -dEPSCrop -dPDFSETTINGS=/%quality% -dCompatibilityLevel=1.4 -dSAFER -q -o
 set texargs=-c -p -t @finalout
 set eps=%temp%\temp.eps
 set png=%temp%\temp.png

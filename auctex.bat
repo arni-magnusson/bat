@@ -42,8 +42,7 @@ goto STARTLOOP
 :ENDLOOP
 
 set dviargs=%dviargs% -P pdf
-set gsargs=%gsargs% -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress^
- -dCompatibilityLevel=1.4 -dSAFER -q -o
+set gsargs=%gsargs% -sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -dCompatibilityLevel=1.4 -dSAFER -q -o
 set tex="%~dpn1.tex"
 set dvi="%~dpn1.dvi"
 set ps="%~dpn1.ps"

@@ -22,8 +22,7 @@ REM                                                                            #
 REM ############################################################################
 
 rem Pop args until file=%1
-set html2latexargs=-I%home%/localtexmf/bin/html2latex^
- %home%/localtexmf/bin/html2latex/html2latex
+set html2latexargs=-I%home%/localtexmf/bin/html2latex %home%/localtexmf/bin/html2latex/html2latex
 :STARTLOOP
 if [%2]==[] goto ENDLOOP
 if %1==-ban set html2latexargs=%html2latexargs% --ban %2 &    shift & shift

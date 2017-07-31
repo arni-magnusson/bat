@@ -35,7 +35,6 @@ if [%2]==[] goto ENDLOOP
 if %1==-quality set quality=%2 &      shift & shift
 if %1==-rotate set rotate=%2 &        shift & shift
 if %1==-size set size=%2&             shift & shift
-rem     space-sensitive ^
 if %1==-width set dimension=width &   shift
 if %1==-height set dimension=height & shift
 goto STARTLOOP
@@ -46,17 +45,14 @@ set thumbfile="%~dpn1_%size%%~x1"
 goto %dimension%
 
 :EITHER
-%convert% -quality %quality% -size %size%x%size% -resize %size%x%size%^
- -rotate %rotate% %1 %thumbfile% & goto EOF
+%convert% -quality %quality% -size %size%x%size% -resize %size%x%size% -rotate %rotate% %1 %thumbfile% & goto EOF
 goto EOF
 
 :WIDTH
-%convert% -quality %quality% -size %size%        -resize %size%^
- -rotate %rotate% %1 %thumbfile% & goto EOF
+%convert% -quality %quality% -size %size%        -resize %size% -rotate %rotate% %1 %thumbfile% & goto EOF
 
 :HEIGHT
-%convert% -quality %quality% -size       x%size% -resize       x%size%^
- -rotate %rotate% %1 %thumbfile% & goto EOF
+%convert% -quality %quality% -size       x%size% -resize       x%size% -rotate %rotate% %1 %thumbfile% & goto EOF
 
 :HELP
 echo Usage: thumb [-quality=90 -rotate=0 -size=800 -width -height] file

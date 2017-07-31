@@ -31,8 +31,7 @@ if %1==-last  set gsargs=%gsargs% -dLastPage=%2 &  shift & shift
 goto STARTLOOP
 :ENDLOOP
 
-set gsargs=%gsargs% -sDEVICE=pdfwrite -dPDFSETTINGS=/%quality%^
- -dCompatibilityLevel=1.4 -q -o
+set gsargs=%gsargs% -sDEVICE=pdfwrite -dPDFSETTINGS=/%quality% -dCompatibilityLevel=1.4 -q -o
 set pdf=out.pdf
 
 gswin32c %gsargs% %pdf% %1

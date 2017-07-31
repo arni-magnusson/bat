@@ -37,10 +37,8 @@ if %1==-ag set gsargs=%gsargs% -dGraphicsAlphaBits=%2& shift & shift
 if %1==-at set gsargs=%gsargs% -dTextAlphaBits=%2&     shift & shift
 if %1==-colors set gscolors=%2& set imcolors=%2&       shift & shift
 if %1==-dpi set gsargs=%gsargs% -r%2&                  shift & shift
-if %1==-gray set gsdevice=pnggray&^
- set imargs=%imargs% -colorspace gray&                 shift
-if %1==-mono set gsdevice=pngmono&^
- set imargs=%imargs% -monochrome&                      shift
+if %1==-gray set gsdevice=pnggray& set imargs=%imargs% -colorspace gray& shift
+if %1==-mono set gsdevice=pngmono& set imargs=%imargs% -monochrome&      shift
 goto STARTLOOP
 :ENDLOOP
 

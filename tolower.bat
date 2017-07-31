@@ -39,13 +39,11 @@ set lower=abcdefghijklmnopqrstuvwxyz
 rem 1  If %1 is a directory and user did not pass -f,
 rem    make sure it is renamed (not only its contents)
 echo %1>%TEMP%\main.txt
-for /F "usebackq tokens=*" %%X in (`sed "y/%upper%/%lower%/" %TEMP%\main.txt`)^
- do echo ren "%%X" "%%X">%TEMP%\rename.txt
+for /F "usebackq tokens=*" %%X in (`sed "y/%upper%/%lower%/" %TEMP%\main.txt`) do echo ren "%%X" "%%X">%TEMP%\rename.txt
 if [%userargs%]==[-f] del %TEMP%\rename.txt
 
 rem 2  Write draft of rename commands (ren "path" "path") to temp.txt
-for /F "usebackq tokens=*" %%X in (`dir %dirargs% %1`)^
- do echo ren "%%X" "%%X">>%TEMP%\rename.txt
+for /F "usebackq tokens=*" %%X in (`dir %dirargs% %1`) do echo ren "%%X" "%%X">>%TEMP%\rename.txt
 
 rem 3  Edit second "path" to basename
 sed "s/\" \".*\\\/\" \"/g" %TEMP%\rename.txt>%TEMP%\rename.bat

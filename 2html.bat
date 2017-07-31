@@ -16,8 +16,7 @@ REM Returns:  Creates HTML file with same prefix in current directory          #
 REM                                                                            #
 REM ############################################################################
 
-set latex2htmlargs=-html_version 4.0 -math -noinfo -nonavigation -noaddress^
- -split 0 -link 1 -lcase_tags
+set latex2htmlargs=-html_version 4.0 -math -noinfo -nonavigation -noaddress -split 0 -link 1 -lcase_tags
 set html="%~dpn1.html"
 
 goto %~x1

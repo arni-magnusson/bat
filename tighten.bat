@@ -44,8 +44,7 @@ rem 1  Calculate narrow box
 gswin32c -dBATCH -dEPSCrop -dNOPAUSE -sDEVICE=bbox %1 > nul 2> %file1%
 
 rem 2  Add margins
-gawk '/%bb%/ {print "%bb%: " $2-%m% " " $3-%m% " " $4+%m% " " $5+%m%}' %file1%^
- > %file2%
+gawk '/%bb%/ {print "%bb%: " $2-%m% " " $3-%m% " " $4+%m% " " $5+%m%}' %file1% > %file2%
 for /F "usebackq tokens=*" %%L in (%file2%) do set box=%%L
 
 rem 3  Backup and overwrite file

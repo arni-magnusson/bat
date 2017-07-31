@@ -24,13 +24,11 @@ REM ############################################################################
 
 rem Allow multiple file args
 set format="%%f %%wx%%h %%q-bit %%r [%%b bytes]\n"
-if %1==-u set format="%%f %%wx%%h %%q-bit %%r in %%k colors [%%b bytes]\n"&^
- shift
+if %1==-u set format="%%f %%wx%%h %%q-bit %%r in %%k colors [%%b bytes]\n"& shift
 
-rem Loop so that wildcards (*.jpg) are expanded and output will have \n between^
+rem Loop so that wildcards (*.jpg) are expanded and output will have \n between
 rem files, but not after last file
-for /F "usebackq tokens=*" %%F in (`dir /b %1`) do^
- identify -format %format% "%%F"
+for /F "usebackq tokens=*" %%F in (`dir /b %1`) do identify -format %format% "%%F"
 
 goto EOF
 

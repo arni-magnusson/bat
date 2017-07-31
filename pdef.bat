@@ -16,8 +16,7 @@ REM Returns:  Creates filename_.pdf in current directory                       #
 REM                                                                            #
 REM ############################################################################
 
-set gsargs=-sDEVICE=pdfwrite -dEPSCrop -dPDFSETTINGS=/default^
- -dCompatibilityLevel=1.4 -dSAFER -q -o
+set gsargs=-sDEVICE=pdfwrite -dEPSCrop -dPDFSETTINGS=/default -dCompatibilityLevel=1.4 -dSAFER -q -o
 set pdf="%~dpn1_.pdf"
 gswin32c %gsargs% %pdf% %1
 goto EOF

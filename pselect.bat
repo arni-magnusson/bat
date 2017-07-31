@@ -17,8 +17,7 @@ REM Returns:  Creates out.pdf in current directory                             #
 REM                                                                            #
 REM ############################################################################
 
-sejda-console extractpages -f %1 -o out.pdf^
- -s %2,%3,%4,%5,%6,%7,%8,%9 --overwrite & goto EOF
+sejda-console extractpages -f %1 -o out.pdf -s %2,%3,%4,%5,%6,%7,%8,%9 --overwrite & goto EOF
 
 :HELP
 echo Usage: pselect file pages

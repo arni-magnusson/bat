@@ -20,8 +20,7 @@ REM Returns:  Creates file out.pdf in current directory                        #
 REM                                                                            #
 REM ############################################################################
 
-set gsargs=-sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -dCompatibilityLevel=1.4^
- -dSAFER -q -o
+set gsargs=-sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -dCompatibilityLevel=1.4 -dSAFER -q -o
 set pdf=out.pdf
 
 gswin32c %gsargs% %pdf% %*

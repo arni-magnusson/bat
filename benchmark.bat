@@ -24,8 +24,7 @@ REM : = to remove initial whitespace
 set before=%time: =%
 call %*
 set after=%time: =%
-echo library(gmt); cat(3600*(deg2num("%after%")-deg2num("%before%"))) |^
- R --slave --vanilla
+echo library(gmt); cat(3600*(deg2num("%after%")-deg2num("%before%"))) | R --slave --vanilla
 echo s
 
 goto EOF

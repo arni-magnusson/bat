@@ -28,15 +28,12 @@ pdftk %1 cat 42 output %x%_page.pdf
 pdfinfo %x%_page.pdf > %x%_size.txt
 
 rem 3  Set width and height
-for /F "usebackq tokens=*" %%V in^
- (`gawk "/Page size/ {print $3}" %x%_size.txt`) do set width=%%V
-for /F "usebackq tokens=*" %%V in^
- (`gawk "/Page size/ {print $5}" %x%_size.txt`) do set height=%%V
+for /F "usebackq tokens=*" %%V in (`gawk "/Page size/ {print $3}" %x%_size.txt`) do set width=%%V
+for /F "usebackq tokens=*" %%V in (`gawk "/Page size/ {print $5}" %x%_size.txt`) do set height=%%V
 del %x%_page.pdf %x%_size.txt
 
 rem 4  Create empty %x%_empty.pdf
-echo pdf.blank("%x%_empty.pdf", as.numeric(Sys.getenv("width"))/72,^
- as.numeric(Sys.getenv("height"))/72) | R --slave
+echo pdf.blank("%x%_empty.pdf", as.numeric(Sys.getenv("width"))/72, as.numeric(Sys.getenv("height"))/72) | R --slave
 echo.
 
 rem 5  Suggest next command

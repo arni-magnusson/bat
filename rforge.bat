@@ -28,8 +28,7 @@ rem 3  Convert package name to lowercase
 set upper=ABCDEFGHIJKLMNOPQRSTUVWXYZ
 set lower=abcdefghijklmnopqrstuvwxyz
 echo %pkg%>%TEMP%\pkg.txt
-for /F "usebackq tokens=*" %%X in (`sed "y/%upper%/%lower%/" %TEMP%\pkg.txt`)^
- do set pkg=%%X
+for /F "usebackq tokens=*" %%X in (`sed "y/%upper%/%lower%/" %TEMP%\pkg.txt`) do set pkg=%%X
 
 rem 4  Checkout
 echo on

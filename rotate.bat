@@ -43,19 +43,16 @@ if not exist %1 (if %quiet%==0 echo %1: not found) & goto EOF
 
 rem If %1 is a directory, recurse
 set type=%~a1
-if %type:~0,1%==d for /F "usebackq tokens=*" %%X in (`dir A-D/B/S %1`) do^
- call rotate.bat %userargs% %%X
+if %type:~0,1%==d for /F "usebackq tokens=*" %%X in (`dir A-D/B/S %1`) do call rotate.bat %userargs% %%X
 if %type:~0,1%==d goto EOF
 
 rem If %1 starts with *, recurse
 set filename=%1
-if %filename:~0,1%==* for /F "usebackq tokens=*" %%X in (`dir /B %1`) do^
- call rotate.bat %userargs% %%X
+if %filename:~0,1%==* for /F "usebackq tokens=*" %%X in (`dir /B %1`) do call rotate.bat %userargs% %%X
 if %filename:~0,1%==* goto EOF
 
 rem If %1 does is neither jpg nor jpeg, skip it
-if %filename:~-4% NEQ .jpg if %filename:~-4% NEQ .JPG echo %1: not a jpg &^
- goto EOF
+if %filename:~-4% NEQ .jpg if %filename:~-4% NEQ .JPG echo %1: not a jpg & goto EOF
 
 rem %1 is a single valid filename ______________________________________________
 
@@ -63,8 +60,7 @@ set deg=0
 set tempfile=%temp%\temp.jpg
 
 rem 1  Backup original file
-if %backup%==1 (copy %1 %~dpn1.original > nul)^
- else (copy %1 %temp%\backup.jpg > nul)
+if %backup%==1 (copy %1 %~dpn1.original > nul) else (copy %1 %temp%\backup.jpg > nul)
 
 rem 2  Find out current orientation
 for /F "usebackq tokens=*" %%X in (`jpegexiforient -n %1`) do set orient=%%X

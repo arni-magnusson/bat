@@ -25,10 +25,8 @@ set imargs=
 set pnmargs=
 :STARTLOOP
 if [%2]==[] goto ENDLOOP
-if %1==-dpi set gsargs=%gsargs% -r%2&^
- shift & shift
-if %1==-quality set gsargs=%gsargs% -dJPEGQ=%2 & set imargs=-quality %2 &^
- set pnmargs=-quality %2& shift & shift
+if %1==-dpi set gsargs=%gsargs% -r%2& shift & shift
+if %1==-quality set gsargs=%gsargs% -dJPEGQ=%2 & set imargs=-quality %2 & set pnmargs=-quality %2& shift & shift
 goto STARTLOOP
 :ENDLOOP
 

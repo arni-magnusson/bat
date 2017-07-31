@@ -28,8 +28,7 @@ if %1==-quality set quality=%2 & shift & shift
 goto STARTLOOP
 :ENDLOOP
 
-set gsargs=-dFirstPage=2 -sDEVICE=pdfwrite -dPDFSETTINGS=/%quality%^
- -dCompatibilityLevel=1.4 -q -o
+set gsargs=-dFirstPage=2 -sDEVICE=pdfwrite -dPDFSETTINGS=/%quality% -dCompatibilityLevel=1.4 -q -o
 set backup=%temp%\ghostbust.pdf
 set bust=%1_bust.pdf
 
