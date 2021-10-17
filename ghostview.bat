@@ -10,5 +10,5 @@ REM Returns:  PS/PDF viewer is started                                         #
 REM                                                                            #
 REM ############################################################################
 
-set sumatra=%gnu%/pdf/sumatra/sumatrapdf
+set sumatra=%gnu%/sumatra/sumatra
 %sumatra% %*
