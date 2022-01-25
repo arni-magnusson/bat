@@ -19,7 +19,7 @@ REM                                                                            #
 REM Notes:    EPS/PDF/PS -> TIF results in full tiff24nc palette, but          #
 REM             bitmap -> TIF may result in smaller palette                    #
 REM                                                                            #
-REM Requires: convert, gswin32c                                                #
+REM Requires: convert, gswin64c                                                #
 REM                                                                            #
 REM Returns:  Creates TIF file with same prefix in current directory           #
 REM                                                                            #
@@ -54,7 +54,7 @@ goto %~x1
 :.PS
 echo Consider using 2png, then convert PNG-^>TIF for fine control and small file
 echo.
-gswin32c %gsargs% %tif% %1  & goto EOF
+gswin64c %gsargs% %tif% %1  & goto EOF
 
 :.PBM
 :.PNM

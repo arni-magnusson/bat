@@ -10,10 +10,10 @@ REM Args:     See Ghostscript documentation                                    #
 REM                                                                            #
 REM Notes:    Implemented for eps2pdf()                                        #
 REM                                                                            #
-REM Requires: gswin32c                                                         #
+REM Requires: gswin64c                                                         #
 REM                                                                            #
 REM Returns:  Ghostscript is started                                           #
 REM                                                                            #
 REM ############################################################################
 
-gswin32c %*
+gswin64c %*

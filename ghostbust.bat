@@ -14,7 +14,7 @@ REM                                                                            #
 REM Notes:    Redistills from scratch, unlike pdfbust.bat                      #
 REM           Writes backup ghostbust.pdf in %temp%                            #
 REM                                                                            #
-REM Requires: gswin32c                                                         #
+REM Requires: gswin64c                                                         #
 REM                                                                            #
 REM Returns:  Overwrites original PDF file, after removing first page          #
 REM                                                                            #
@@ -33,7 +33,7 @@ set backup=%temp%\ghostbust.pdf
 set bust=%1_bust.pdf
 
 copy %1 %backup%
-gswin32c %gsargs% %bust% %1
+gswin64c %gsargs% %bust% %1
 move %bust% %1
 goto EOF
 

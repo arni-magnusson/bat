@@ -14,7 +14,7 @@ REM           first is first page in range                                     #
 REM           last is last page in range                                       #
 REM           file is PDF file to extract from                                 #
 REM                                                                            #
-REM Requires: gswin32c                                                         #
+REM Requires: gswin64c                                                         #
 REM                                                                            #
 REM Returns:  Creates out.pdf in current directory, containing selected pages  #
 REM                                                                            #
@@ -34,7 +34,7 @@ goto STARTLOOP
 set gsargs=%gsargs% -sDEVICE=pdfwrite -dPDFSETTINGS=/%quality% -dCompatibilityLevel=1.4 -q -o
 set pdf=out.pdf
 
-gswin32c %gsargs% %pdf% %1
+gswin64c %gsargs% %pdf% %1
 goto EOF
 
 :HELP

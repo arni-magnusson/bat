@@ -17,7 +17,7 @@ REM Notes:    Similar to epstool -b --copy --quiet "%1" out.eps, but with      #
 REM             margins                                                        #
 REM           Writes backup tighten.eps in %temp%                              #
 REM                                                                            #
-REM Requires: gswin32c, gawk, sed                                              #
+REM Requires: gswin64c, gawk, sed                                              #
 REM                                                                            #
 REM Returns:  Overwrites EPS file with updated bounding box                    #
 REM                                                                            #
@@ -41,7 +41,7 @@ set file2=%temp%\tighten2.txt
 if %h%==1 (set bb=%%HiResBoundingBox) else (set bb=%%BoundingBox)
 
 rem 1  Calculate narrow box
-gswin32c -dBATCH -dEPSCrop -dNOPAUSE -sDEVICE=bbox %1 > nul 2> %file1%
+gswin64c -dBATCH -dEPSCrop -dNOPAUSE -sDEVICE=bbox %1 > nul 2> %file1%
 
 rem 2  Add margins
 gawk '/%bb%/ {print "%bb%: " $2-%m% " " $3-%m% " " $4+%m% " " $5+%m%}' %file1% > %file2%

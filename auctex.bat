@@ -17,7 +17,7 @@ REM           v invokes PDF viewer                                             #
 REM           paper is the paper size, a4 (default) or letter                  #
 REM           file is the TeX file in current Emacs buffer                     #
 REM                                                                            #
-REM Requires: texify, dvips, gswin32c, sumatra, gsview32, R                    #
+REM Requires: texify, dvips, gswin64c, sumatra, gsview32, R                    #
 REM                                                                            #
 REM Example:  C-c C-c, C-c C-d, C-c C-v, C-c C-d                               #
 REM                                                                            #
@@ -56,7 +56,7 @@ goto %action%
 :COMPILE
 texify %tex%
 dvips %dviargs% %dvi%
-gswin32c %gsargs% %pdf% %ps%
+gswin64c %gsargs% %pdf% %ps%
 goto EOF
 
 :KNIT

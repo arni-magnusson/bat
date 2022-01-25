@@ -16,7 +16,7 @@ REM             vector output                                                  #
 REM           PDF->EPS (pdftops) is postprocessed, replacing "% Produced" with #
 REM             "%%Produced"                                                   #
 REM                                                                            #
-REM Requires: bmeps, convert, gswin32c, pdftops, sed                           #
+REM Requires: bmeps, convert, gswin64c, pdftops, sed                           #
 REM                                                                            #
 REM Returns:  Creates EPS file with same prefix in current directory           #
 REM                                                                            #
@@ -52,7 +52,7 @@ del %png%                     & goto EOF
 bmeps %bmargs% %1 %eps%       & goto EOF
 
 :.PS
-gswin32c %gsargs% %eps% %1    & goto EOF
+gswin64c %gsargs% %eps% %1    & goto EOF
 
 :.PDF
 pdftops %pdfargs% %1

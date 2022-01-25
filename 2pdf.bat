@@ -18,7 +18,7 @@ REM           quality determines image quality (screen, ebook, printer,        #
 REM             prepress, default)                                             #
 REM           file is file to convert                                          #
 REM                                                                            #
-REM Requires: bmeps, convert, dvipdfm, gswin32c, texi2dvi, texify              #
+REM Requires: bmeps, convert, dvipdfm, gswin64c, texi2dvi, texify              #
 REM                                                                            #
 REM Warning:  -paper is often ignored by dvips, must edit manually in PS file  #
 REM             (change line following %%BeginPaperSize)                       #
@@ -57,7 +57,7 @@ goto %~x1
 :.TIF
 %convert% %1 %png%
 bmeps %bmargs% %png% %eps%
-gswin32c %gsargs% %pdf% %eps%
+gswin64c %gsargs% %pdf% %eps%
 del %png% %eps%               & goto EOF
 
 :.JPG
@@ -65,21 +65,21 @@ del %png% %eps%               & goto EOF
 :.PNM
 :.PPM
 bmeps %bmargs% %1 %eps%
-gswin32c %gsargs% %pdf% %eps%
+gswin64c %gsargs% %pdf% %eps%
 del %eps%                     & goto EOF
 
 :.DVI
 dvipdfm %dviargs% %1          & goto EOF
 
 :.PS
-gswin32c %gsargs% %pdf% %1    & goto EOF
+gswin64c %gsargs% %pdf% %1    & goto EOF
 
 :.PDF
 set pdf="%~dpn1_.pdf"
-gswin32c %gsargs% %pdf% %1    & goto EOF
+gswin64c %gsargs% %pdf% %1    & goto EOF
 
 :.EPS
-gswin32c %gsargs% %pdf% %1    & goto EOF
+gswin64c %gsargs% %pdf% %1    & goto EOF
 
 :.TEX
 :.DTX

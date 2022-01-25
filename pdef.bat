@@ -10,7 +10,7 @@ REM Purpose:  Redistill PDF document with default quality                      #
 REM                                                                            #
 REM Args:     file is a PDF document                                           #
 REM                                                                            #
-REM Requires: gswin32c                                                         #
+REM Requires: gswin64c                                                         #
 REM                                                                            #
 REM Returns:  Creates filename_.pdf in current directory                       #
 REM                                                                            #
@@ -18,7 +18,7 @@ REM ############################################################################
 
 set gsargs=-sDEVICE=pdfwrite -dEPSCrop -dPDFSETTINGS=/default -dCompatibilityLevel=1.4 -dSAFER -q -o
 set pdf="%~dpn1_.pdf"
-gswin32c %gsargs% %pdf% %1
+gswin64c %gsargs% %pdf% %1
 goto EOF
 
 :HELP

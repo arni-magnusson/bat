@@ -14,7 +14,7 @@ REM                                                                            #
 REM Notes:    HTML conversion options are set in (1) html2ps/html2psrc and in  #
 REM             local (2) html2ps.css                                          #
 REM                                                                            #
-REM Requires: dvips, gswin32c, html2ps, latex, pdftops                         #
+REM Requires: dvips, gswin64c, html2ps, latex, pdftops                         #
 REM                                                                            #
 REM Returns:  Creates PS file with same prefix in current directory            #
 REM                                                                            #

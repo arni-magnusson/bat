@@ -13,7 +13,7 @@ REM                                                                            #
 REM Notes:    Try these options for TEX (-c, -e, -n, -s, -w),                  #
 REM             DVI (-p, -P, -w), and PDF (-layout, -raw)                      #
 REM                                                                            #
-REM Requires: antiword, detex, dvi2tty, gswin32c, lynx, pdftotext              #
+REM Requires: antiword, detex, dvi2tty, gswin64c, lynx, pdftotext              #
 REM                                                                            #
 REM Returns:  Creates TXT file with same prefix in current directory           #
 REM                                                                            #
@@ -46,7 +46,7 @@ lynx %lynxargs% %1> %txt%     & goto EOF
 pdftotext %userargs% %1 %txt% & goto EOF
 
 :.PS
-gswin32c %gsargs% %1> %txt%   & goto EOF
+gswin64c %gsargs% %1> %txt%   & goto EOF
 
 :.TEX
 detex %userargs% %1> %txt%    & goto EOF

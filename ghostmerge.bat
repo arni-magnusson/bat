@@ -14,7 +14,7 @@ REM Notes:    No args are supported, to allow %* to contain many files and no  #
 REM             args                                                           #
 REM           Therefore, the quality level is hardwired (prepress)             #
 REM                                                                            #
-REM Requires: gswin32c                                                         #
+REM Requires: gswin64c                                                         #
 REM                                                                            #
 REM Returns:  Creates file out.pdf in current directory                        #
 REM                                                                            #
@@ -23,7 +23,7 @@ REM ############################################################################
 set gsargs=-sDEVICE=pdfwrite -dPDFSETTINGS=/prepress -dCompatibilityLevel=1.4 -dSAFER -q -o
 set pdf=out.pdf
 
-gswin32c %gsargs% %pdf% %*
+gswin64c %gsargs% %pdf% %*
 goto EOF
 
 :HELP

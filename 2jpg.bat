@@ -13,7 +13,7 @@ REM             (72=low[default], 600=high)                                    #
 REM           quality is JPG compression quality, 0-100 (default is 75)        #
 REM           file is file to convert                                          #
 REM                                                                            #
-REM Requires: convert, gswin32c                                                #
+REM Requires: convert, gswin64c                                                #
 REM                                                                            #
 REM Returns:  Creates JPG file with same prefix in current directory           #
 REM                                                                            #
@@ -44,7 +44,7 @@ goto %~x1
 %convert% %imargs% %1 %jpg%  & goto EOF
 
 :.EPS
-gswin32c %gsargs%%jpg% %1    & goto EOF
+gswin64c %gsargs%%jpg% %1    & goto EOF
 
 :.PBM
 :.PNM

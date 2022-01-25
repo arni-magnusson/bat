@@ -19,7 +19,7 @@ REM           gray uses grayscale palette                                      #
 REM           mono uses monochrome palette                                     #
 REM           file is file to convert                                          #
 REM                                                                            #
-REM Requires: convert, gswin32c                                                #
+REM Requires: convert, gswin64c                                                #
 REM                                                                            #
 REM Returns:  Creates PNG file with same prefix in current directory           #
 REM                                                                            #
@@ -66,7 +66,7 @@ goto %~x1
 :.EPS
 :.PDF
 :.PS
-gswin32c %gsargs% %png% %1  & goto EOF
+gswin64c %gsargs% %png% %1  & goto EOF
 
 :.PBM
 :.PNM
