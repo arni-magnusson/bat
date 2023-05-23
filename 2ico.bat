@@ -8,7 +8,7 @@ REM Script:   2ico [-colors=n] file                                            #
 REM                                                                            #
 REM Purpose:  Convert bitmap file to ICO format                                #
 REM                                                                            #
-REM Args:     colors is the required number of colours (2, 16, 256)            #
+REM Args:     colors is the required number of colors (2, 16, 256)             #
 REM           file is file to convert                                          #
 REM                                                                            #
 REM Requires: png2ico, convert                                                 #
