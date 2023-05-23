@@ -9,9 +9,9 @@ REM                                                                            #
 REM Purpose:  Convert bitmap, EPS, or PDF file to PNG format                   #
 REM                                                                            #
 REM Args:     ag is anti-aliasing for graphics when converting PS/PDF file     #
-REM             (1=none[default], 4=full)                                      #
+REM             (1=none, 4=full[default])                                      #
 REM           at is anti-aliasing for text when converting PS/PDF file         #
-REM             (1=none[default], 4=full)                                      #
+REM             (1=none, 4=full[default])                                      #
 REM           colors is number of colors in PNG palette                        #
 REM           dpi is output resolution when converting PS/PDF file             #
 REM             (72=low[default], 600=high)                                    #
@@ -26,6 +26,8 @@ REM                                                                            #
 REM ############################################################################
 
 rem Pop args until file=%1
+set a=4
+set b=4
 set gsargs=
 set gscolors=16777216
 set gsdevice=png16m
@@ -33,14 +35,18 @@ set imargs=-depth 8 -type optimize +dither
 set imcolors=16777216
 :STARTLOOP
 if [%2]==[] goto ENDLOOP
-if %1==-ag set gsargs=%gsargs% -dGraphicsAlphaBits=%2& shift & shift
-if %1==-at set gsargs=%gsargs% -dTextAlphaBits=%2&     shift & shift
-if %1==-colors set gscolors=%2& set imcolors=%2&       shift & shift
-if %1==-dpi set gsargs=%gsargs% -r%2&                  shift & shift
+if %1==-ag set a=%2&                                             shift & shift
+if %1==-at set b=%2&                                             shift & shift
+if %1==-colors set gscolors=%2& set imcolors=%2&                 shift & shift
+if %1==-dpi set gsargs=%gsargs% -r%2&                            shift & shift
 if %1==-gray set gsdevice=pnggray& set imargs=%imargs% -colorspace gray& shift
 if %1==-mono set gsdevice=pngmono& set imargs=%imargs% -monochrome&      shift
 goto STARTLOOP
 :ENDLOOP
+
+rem Set a and b
+set gsargs=%gsargs% -dGraphicsAlphaBits=%a%
+set gsargs=%gsargs% -dTextAlphaBits=%b%
 
 set png="%~dpn1.png"
 set convert=%gnu%/graphics/imagick/convert
